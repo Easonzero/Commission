@@ -21,3 +21,18 @@ sudo npm install electron -g
 ![结果1](./img/result1.png)
 
 ![结果2](./img/result2.png)
+
+##测试
+
+测试需要安装测试框架mocha,和断言库should
+
+>sudo npm install mocha -g
+sudo npm install --only=dev
+
+测试文件在`./test`,在根目录使用测试命令
+
+>mocha
+
+测试结果如下
+
+![测试](./img/test.png)

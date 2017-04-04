@@ -2,5 +2,9 @@
   "name": "commission",
   "version": "1.0.0",
   "main": "app.js",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "should": "*",
+    "mocha": "*"
+  }
 }
