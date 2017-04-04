@@ -11,10 +11,6 @@
         <md-input-container class="md-block">
             <label>Report</label>
             <input md-maxlength="8" required md-no-asterisk name="report" ng-model="report">
-            <div ng-messages="report.$error">
-                <div ng-message="required">This is required.</div>
-                <div ng-message="md-maxlength">The report must be less than 8 characters long.</div>
-            </div>
         </md-input-container>
         <p>
             <span style="color: red;text-shadow:1px 1px 1px red">NOTICE</span>
