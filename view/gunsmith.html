@@ -1,0 +1,28 @@
+<div style="height:100%;overflow-y:scroll" ng-resize hprecent="1" layout-padding>
+    <md-input-container>
+        <label>Month</label>
+        <md-select ng-model="currentMonth" md-selected-text="selected()">
+            <md-option ng-repeat="month in months" ng-value="month">
+                {{month}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <table class="data-header">
+        <tr>
+            <td>locks</td>
+            <td>stocks</td>
+            <td>barries</td>
+            <td>totalSales</td>
+            <td>commission</td>
+        </tr>
+        <tr>
+            <td>{{ locks }}</td>
+            <td>{{ stocks }}</td>
+            <td>{{ barries }}</td>
+            <td>{{ totalSales }}</td>
+            <td>{{ commission }}</td>
+        </tr>
+    </table>
+
+    <ng-chart chart-data="chartData"></ng-chart>
+</div>

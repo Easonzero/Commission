@@ -1,0 +1,40 @@
+.data-header,.data-header th ,.data-header td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+}
+.data-header{
+    word-break: break-all;
+    word-wrap: normal;
+    white-space:pre-wrap;
+}
+.data-header tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+.data-header tr:nth-child(even) {
+    background-color: #ffffff;
+}
+.data-header{
+    position:relative;
+    left:50%;
+    transform:translate(-50%,20px);
+}
+.data-header{width:84%;}
+
+.arc text {
+    font: 10px sans-serif;
+    text-anchor: middle;
+}
+
+.arc path {
+    stroke: #fff;
+}
+
+md-content {
+    min-height: 570px;
+}
+
+.right{
+    left:100%;
+    transform:translate(-100%);
+}
