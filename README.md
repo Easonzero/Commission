@@ -1,7 +1,7 @@
 # Commission
 哈工大软件测试大作业3，基于electron、angular构建的material风格的桌面app，图表绘制使用d3.js，测试框架使用macha
 
-作业的题目是军火商和供应商的py交易
+作业的题目是军火商和供应商的py交易,功能上支持多用户、多月份、非连续输入的py交易,图表目前支持单用户销售量的饼图和多用户销售额小绿点图(类似github那个小绿点)
 
 # 还有什么好说的！
 # 学弟学妹们快上车，随便拿去用！
@@ -21,6 +21,10 @@ sudo npm install electron -g
 ![结果1](./img/result1.png)
 
 ![结果2](./img/result2.png)
+
+![结果3](./img/result3.png)
+
+![结果0](./img/result0.png)
 
 ##测试
 

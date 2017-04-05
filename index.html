@@ -38,7 +38,7 @@
 <md-content>
     <ng-view></ng-view>
 
-    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+    <md-sidenav style="height:100%;overflow-y:hidden" class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
 
         <md-toolbar class="md-theme-light">
             <h1 class="md-toolbar-tools">Activity</h1>
@@ -49,8 +49,12 @@
                     salesperson
                 </md-list-item>
                 <md-divider></md-divider>
-                <md-list-item ng-click="toggleLeft()" href="#/gunsmith">
-                    gunsmith
+                <md-list-item ng-click="toggleLeft()" href="#/gunsmith1">
+                    gunsmith/search
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item ng-click="toggleLeft()" href="#/gunsmith2">
+                    gunsmith/total
                 </md-list-item>
                 <md-divider></md-divider>
             </md-list>

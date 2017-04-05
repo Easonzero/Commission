@@ -15,17 +15,23 @@ module.exports = function($scope,$mdToast,CalService){
     $scope.months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
     $scope.report = '00,00,00';
+    $scope.clientName = 'easonzero';
 
     $scope.submit = function(){
+        let index = $scope.months.indexOf($scope.currentMonth);
         if($scope.report=='-1'){
             errprint($mdToast,`Finish a ${$scope.currentMonth} report!`);
-            CalService.finish($scope.currentMonth);
+            CalService.finish($scope.clientName,index);
             return;
         }
 
         if(!$scope.report) {
-            errprint($mdToast,'The format of the report is incorrect！');
+            errprint($mdToast,'report is requested');
             return;
+        }
+
+        if(!$scope.clientName) {
+            errprint($mdToast,'clientName is requested');
         }
 
         let data = $scope.report.split(',');
@@ -37,15 +43,15 @@ module.exports = function($scope,$mdToast,CalService){
         data[0] = Number(data[0]);
         data[1] = Number(data[1]);
         data[2] = Number(data[2]);
-        if(isNaN(data[0])||isNaN(data[1])||isNaN(data[2])) {
+        if(isNaN(data[0])||isNaN(data[1])||isNaN(data[2])||data[0]<0||data[1]<0||data[2]<0) {
             errprint($mdToast,'The format of the report is incorrect！');
             return;
         }
 
-        if(!CalService.addReport(data))
+        if(!CalService.addReport($scope.clientName,data))
             errprint($mdToast,'locks up to 70/stocks up to 80/barries up to 90 per month!');
         else{
-            errprint('Success!');
+            errprint($mdToast,'Success!');
             $scope.report = '00,00,00';
         }
     };

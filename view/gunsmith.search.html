@@ -1,0 +1,35 @@
+<div style="height:100%;overflow-y:scroll" ng-resize hprecent="1" layout-padding>
+    <div layout="row">
+        <md-input-container>
+            <label>Month</label>
+            <md-select ng-model="currentMonth" md-selected-text="selected()">
+                <md-option ng-repeat="month in months" ng-value="month">
+                    {{month}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Client Name</label>
+            <input required name="clientName" ng-model="clientName">
+        </md-input-container>
+    </div>
+    <md-button style="padding:0;margin-top:-40px" class="md-raised md-primary" ng-click="search()">search</md-button>
+    <table class="data-header">
+        <tr>
+            <td>locks</td>
+            <td>stocks</td>
+            <td>barries</td>
+            <td>totalSales</td>
+            <td>commission</td>
+        </tr>
+        <tr>
+            <td>{{ locks }}</td>
+            <td>{{ stocks }}</td>
+            <td>{{ barries }}</td>
+            <td>{{ totalSales }}</td>
+            <td>{{ commission }}</td>
+        </tr>
+    </table>
+
+    <ng-pie-chart chart-data="chartData"></ng-pie-chart>
+</div>

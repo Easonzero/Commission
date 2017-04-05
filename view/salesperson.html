@@ -1,13 +1,19 @@
-<div style="height:100%;overflow-y:scroll" ng-resize hprecent="1" layout-padding>
-    <md-input-container>
-        <label>Month</label>
-        <md-select ng-model="currentMonth">
-            <md-option ng-repeat="month in months" value="{{month}}">
-                {{month}}
-            </md-option>
-        </md-select>
-    </md-input-container>
-    <div style="position: relative;top: 10%;">
+<div style="height:100%;overflow-y:hidden" ng-resize hprecent="1" layout-padding>
+    <div layout="row">
+        <md-input-container>
+            <label>Month</label>
+            <md-select ng-model="currentMonth">
+                <md-option ng-repeat="month in months" value="{{month}}">
+                    {{month}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Client Name</label>
+            <input required name="clientName" ng-model="clientName">
+        </md-input-container>
+    </div>
+    <div style="position: relative;top: 5%;">
         <md-input-container class="md-block">
             <label>Report</label>
             <input md-maxlength="8" required md-no-asterisk name="report" ng-model="report">
@@ -16,6 +22,6 @@
             <span style="color: red;text-shadow:1px 1px 1px red">NOTICE</span>
             :The format of the Report is "the number of locks,the number of stocks,the number of barries".
         </p>
-        <md-button style="margin-top:150px" class="md-raised md-primary right" ng-click="submit()">Submit</md-button>
+        <md-button style="margin-top:100px" class="md-raised md-primary right" ng-click="submit()">Submit</md-button>
     </div>
 </div>

@@ -54,14 +54,27 @@ app.directive("ngDrop", function($parse) {
     };
 });
 
-app.directive("ngChart", function($window,ChartFactory) {
+app.directive("ngPieChart", function($window,ChartFactory) {
     return {
         restrict : "EA",
         scope:{chartData:'=chartData'},
         link: function(scope, element, attrs) {
             scope.$watch('chartData', function(nv){
                 if(!nv) return;
-                ChartFactory.render(element[0],nv,$window.innerHeight-96,$window.innerWidth);
+                ChartFactory.renderPie(element[0],nv,$window.innerHeight/2,$window.innerWidth);
+            });
+        }
+    };
+});
+
+app.directive("ngCalendarChart", function($window,ChartFactory) {
+    return {
+        restrict : "EA",
+        scope:{chartData:'=chartData'},
+        link: function(scope, element, attrs) {
+            scope.$watch('chartData', function(nv){
+                if(!nv) return;
+                ChartFactory.renderCalendar(element[0],nv,$window.innerHeight-96,$window.innerWidth);
             });
         }
     };
