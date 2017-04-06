@@ -19,13 +19,12 @@ function calcore(){
     };
 
     this.finish = function(clientName,month){
-        history[clientName] = {};
+        if(!history[clientName])
+            history[clientName] = {};
         history[clientName][month] = [];
-
         for(let report of queue[clientName].q){
             history[clientName][month].push(report);
         }
-
         delete queue[clientName];
     };
 

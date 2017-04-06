@@ -48,6 +48,10 @@ module.exports = function($scope,$mdToast,CalService){
             return;
         }
 
+        data[0] = parseInt(data[0]);
+        data[1] = parseInt(data[1]);
+        data[2] = parseInt(data[2]);
+
         if(!CalService.addReport($scope.clientName,data))
             errprint($mdToast,'locks up to 70/stocks up to 80/barries up to 90 per month!');
         else{
